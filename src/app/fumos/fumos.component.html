@@ -1,0 +1,9 @@
+<h2>My Fumos</h2>
+<ul class="fumos">
+    <li *ngFor="let fumo of fumos">
+        <a routerLink="/detail/{{fumo.id}}">
+            <span class="badge">{{fumo.id}}</span>{{fumo.name}}
+        </a>
+    </li>
+</ul>
+<hr>
