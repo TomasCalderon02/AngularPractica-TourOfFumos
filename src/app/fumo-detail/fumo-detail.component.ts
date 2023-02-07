@@ -22,9 +22,17 @@ export class FumoDetailComponent implements OnInit {
       this.getFumo();
     }
 
+    save(): void{
+      if (this.fumo){
+        this.fumoService.updateFumo(this.fumo)
+        .subscribe(() => this.goBack());
+      }
+    }
+
     getFumo():void{
-      const id = Number(this.route.snapshot.paramMap.get('id'));
-      this.fumoService.getFumo(id).subscribe(fumo => this.fumo=fumo);
+      const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+      this.fumoService.getFumo(id)
+      .subscribe(fumo => this.fumo=fumo);
     }
 
     goBack():void{

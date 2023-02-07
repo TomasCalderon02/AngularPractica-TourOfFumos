@@ -4,10 +4,11 @@
     <div>
         <label for="fumo-name">Fumo name:</label>
         <input id="fumo-name" [(ngModel)]="fumo.name" placeholder="Fumo name">
-
+    </div>
+    <div>
         <img src="{{fumo.img}}">
         <a href="{{fumo.gSearch}}"><img src="https://1000marcas.net/wp-content/uploads/2020/02/logo-Google.png" style="height: 15%; width:15%;"></a>
-
-        <button type="button" (click)="goBack()">Go Back</button>
     </div>
+    <button type="button" (click)="save()">Save Changes</button>
+    <button type="button" (click)="goBack()">Go Back</button>
 </div> 

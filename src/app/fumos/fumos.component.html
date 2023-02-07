@@ -1,9 +1,32 @@
 <h2>My Fumos</h2>
+<div>
+    <label for="new-fumo">Fumo Name: </label>
+    <input id="new-fumo" #fumoName/>
+
+    <label for="new-fumo-img">Fumo Image: </label>
+    <input id="new-fumo-img" #fumoImg/>
+
+    <label for="new-fumo-url">Fumo Search: </label>
+    <input id="new-fumo-url" #fumoGSearch/>
+
+    <!-- (click) pasa el input al metodo add() -->
+    <button type="button" class="add-button" 
+    (click)="add(fumoName.value, fumoImg.value, fumoGSearch.value);
+    fumoName.value=''; fumoImg.value=''; fumoGSearch.value='';">
+    Add Fumo ᗜˬᗜ
+    </button>
+</div>
+
 <ul class="fumos">
     <li *ngFor="let fumo of fumos">
         <a routerLink="/detail/{{fumo.id}}">
             <span class="badge">{{fumo.id}}</span>{{fumo.name}}
         </a>
+         <button type="button" class="delete" title="Delete Fumo"
+        (click)="delete(fumo)">
+        X
+        </button>
     </li>
 </ul>
+
 <hr>
