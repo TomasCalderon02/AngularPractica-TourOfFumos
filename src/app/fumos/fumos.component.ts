@@ -23,7 +23,7 @@ export class FumosComponent implements OnInit {
   add(name: string, img:string, gSearch:string){
     name = name.trim();
     img = img.trim();
-    gSearch = img.trim();
+    gSearch = gSearch.trim();
 
     /* preguntar porque funciona si agrega name y img */
     if (!name || !img || !gSearch) {
@@ -38,8 +38,5 @@ export class FumosComponent implements OnInit {
     this.fumos = this.fumos.filter(f => f !== fumo);
     this.fumoService.deleteFumo(fumo.id).subscribe();
   } 
-
-  
-
 }
 
